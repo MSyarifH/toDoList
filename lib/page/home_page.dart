@@ -4,6 +4,7 @@ import 'package:todolist/component/bottom_sheet.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
 import '../component/helper.dart';
+import '../component/helper_date.dart';
 import '../hive/note_model.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -24,9 +25,12 @@ class _MyHomePageState extends State<MyHomePage> with PrintClass {
 
   @override
   void printData(String msg, data) {
-    // TODO: implement printData
+    DateHandler currentDate = CurrentDate();
+    currentDate.displayDate();
     super.printData(msg, data);
   }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +69,8 @@ class _MyHomePageState extends State<MyHomePage> with PrintClass {
                                       : Icons.cancel),
                                   color: Colors.white,
                                   onPressed: () {
-                                    printData("status saat ini",noteData.status);
+                                    printData(
+                                        "status saat ini", noteData.status);
                                     if (noteData.status) {
                                       noteBox.putAt(
                                           index,
