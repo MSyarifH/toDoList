@@ -25,21 +25,19 @@ class _MyHomePageState extends State<MyHomePage> with PrintClass {
 
   @override
   void printData(String msg, data) {
+    super.printData(msg, data);
     DateHandler currentDate = CurrentDate();
     currentDate.displayDate();
-    super.printData(msg, data);
   }
-
-
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: Column(
           children: [
-            Text("Todo Task",
+            const Text("Todo Task",
                 style: TextStyle(fontSize: 40, color: Colors.blue)),
-            Divider(thickness: 2, color: Colors.blue),
+            const Divider(thickness: 2, color: Colors.blue),
             Expanded(
               flex: 1,
               child: ValueListenableBuilder<Box>(
@@ -100,8 +98,6 @@ class _MyHomePageState extends State<MyHomePage> with PrintClass {
                                   icon: const Icon(Icons.delete),
                                   color: Colors.white,
                                   onPressed: () {
-                                    print(index);
-                                    // noteBox.clear();
                                     noteBox.deleteAt(index);
                                     setState(() {});
                                   },
@@ -130,18 +126,19 @@ class _MyHomePageState extends State<MyHomePage> with PrintClass {
                                   children: [
                                     Text(
                                       noteData.judul,
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                           fontSize: 20, color: Colors.white),
                                     ),
                                     Text(
                                       noteData.desc,
-                                      style: TextStyle(color: Colors.white),
+                                      style:
+                                          const TextStyle(color: Colors.white),
                                     ),
                                   ],
                                 ),
                                 noteData.status == true
                                     ? Container()
-                                    : Icon(
+                                    : const Icon(
                                         Icons.check_circle_outline,
                                         color: Colors.white,
                                       )

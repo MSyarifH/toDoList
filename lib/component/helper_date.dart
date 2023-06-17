@@ -9,16 +9,3 @@ class CurrentDate extends DateHandler {
     print("Current date: ${now.day}/${now.month}/${now.year}");
   }
 }
-
-class CustomDate extends DateHandler {
-  final int day;
-  final int month;
-  final int year;
-
-  CustomDate(this.day, this.month, this.year);
-
-  @override
-  void displayDate() {
-    print("Custom date: $day/$month/$year");
-  }
-}

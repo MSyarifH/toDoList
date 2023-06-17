@@ -3,9 +3,6 @@ import 'package:todolist/page/home_page.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:todolist/hive/note_model.dart';
 
-
-late Box box;
-
 Future<void> main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(NoteModelAdapter());
@@ -24,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SafeArea(child: const MyHomePage()),
+      home: const SafeArea(child: MyHomePage()),
     );
   }
 }
