@@ -3,6 +3,7 @@ abstract class DateHandler {
 }
 
 class CurrentDate extends DateHandler {
+  // polymorphism fungsi displayDate ditambahkan data yang lain
   @override
   void displayDate() {
     DateTime now = DateTime.now();
